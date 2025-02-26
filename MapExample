@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class MapExample {
+    public static void main(String[] args) {
+        List<Person> people = Arrays.asList(new Person("Alice", 25), new Person("Bob", 30));
+        List<String> names = people.stream().map(Person::getName).collect(Collectors.toList());
+        System.out.println(names);
+    }
+}
